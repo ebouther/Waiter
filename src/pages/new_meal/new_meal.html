@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      New Meal
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+    <ion-item>
+      <ion-label>Poisson/Viande</ion-label>
+      <ion-select [(ngModel)]="inputs.meat" interface="popover">
+        <ion-option *ngFor="let meat of menu.meats">{{meat.name}}</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>Cuisson</ion-label>
+      <ion-select [(ngModel)]="inputs.doneness" interface="popover">
+        <ion-option>Saignant</ion-option>
+        <ion-option>À Point</ion-option>
+        <ion-option>Bien Cuit</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>Plat</ion-label>
+      <ion-select [(ngModel)]="inputs.meal" interface="popover">
+        <ion-option *ngFor="let meal of menu.meals">{{meal.name}}</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>Enfant</ion-label>
+      <ion-checkbox [(ngModel)]="inputs.child"></ion-checkbox>
+    </ion-item>
+    <ion-item>
+      <ion-label>Sauce</ion-label>
+      <ion-checkbox [(ngModel)]="inputs.sauce"></ion-checkbox>
+    </ion-item>
+    <button (click)="submit()" ion-button>Ok</button>
+</ion-content>
