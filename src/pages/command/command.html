@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Command
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <div class="text-center">
+    <span class="table_nb_title">Table n°</span><input class="table_nb" type="number" min="1" max="99" [(ngModel)]="table" name="table" />
+  </div>
+  <br/>
+  <br/>
+  <div class="vert-align">
+    <ion-grid>
+      <ion-row class="command_row" *ngFor="let command of menu.commands">
+        <input class="col command_col" type="number" min="1" max="99" value="1"/>
+        <ion-col class="command_col">{{command.meat}}</ion-col>
+        <ion-col class="command_col">{{command.doneness}}</ion-col>
+        <ion-col class="command_col">{{command.meal}}</ion-col>
+        <ion-col class="command_col">{{command.sauce ? "Sauce" : "Sans Sauce"}}</ion-col>
+        <ion-col class="command_col">{{command.child ? "Enfant" : ""}}</ion-col>>
+      </ion-row>
+      <br/>
+      <br/>
+      <ion-row>
+        <div class="col text-center">
+          <button [navPush]="mealPage" ion-button>New Meal</button>
+        </div>
+      </ion-row>
+    </ion-grid>
+  </div>
+
+</ion-content>

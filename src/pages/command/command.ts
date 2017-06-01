@@ -6,11 +6,12 @@ import {MenuService} from '../../app/services/menu.service';
 import {NewMealPage} from '../new_meal/new_meal';
 
 @Component({
-  selector: 'page-contact',
-  templateUrl: 'contact.html'
+  selector: 'page-command',
+  templateUrl: 'command.html'
 })
-export class ContactPage {
+export class CommandPage {
 
+  private table = 0;
   mealPage: any;
 
   constructor(public navCtrl: NavController,

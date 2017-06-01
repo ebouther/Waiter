@@ -4,7 +4,7 @@ import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 
 import { AboutPage } from '../pages/about/about';
-import { ContactPage } from '../pages/contact/contact';
+import { CommandPage } from '../pages/command/command';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
 import { NewMealPage } from '../pages/new_meal/new_meal';
@@ -18,7 +18,7 @@ import { MenuService } from './services/menu.service';
   declarations: [
     MyApp,
     AboutPage,
-    ContactPage,
+    CommandPage,
     HomePage,
     TabsPage,
     NewMealPage
@@ -31,7 +31,7 @@ import { MenuService } from './services/menu.service';
   entryComponents: [
     MyApp,
     AboutPage,
-    ContactPage,
+    CommandPage,
     HomePage,
     TabsPage,
     NewMealPage
