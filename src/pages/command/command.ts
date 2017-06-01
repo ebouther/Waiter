@@ -25,4 +25,17 @@ export class CommandPage {
     popover.present();
   }
 
+  increment(index) {
+    this.menu.commands[index].nb++;
+  }
+
+  decrement(index) {
+    if (--this.menu.commands[index].nb <= 0)
+      this.menu.commands.splice(index, 1);
+  }
+
+  trackByIndex(index: number, obj: any): any {
+    return index;
+  }
+
 }

@@ -1,7 +1,7 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      Command
+      Commandes
     </ion-title>
   </ion-navbar>
 </ion-header>
@@ -14,8 +14,13 @@
   <br/>
   <div class="vert-align">
     <ion-grid>
-      <ion-row class="command_row" *ngFor="let command of menu.commands">
-        <input class="col command_col" type="number" min="1" max="99" value="1"/>
+      <ion-row class="command_row" *ngFor="let command of menu.commands; let i=index; trackBy:trackByIndex">
+        <!-- <input class="col command_col" type="number" min="1" max="99" value="1"/> -->
+        <div class="vert-align">
+          <ion-icon class="rmButton" name="remove-circle" (click)="decrement(i)"></ion-icon>
+          <span class="command_nb">{{command.nb}}</span>
+          <ion-icon class="addButton" name="add-circle" (click)="increment(i)"></ion-icon>
+        </div>
         <ion-col class="command_col">{{command.meat}}</ion-col>
         <ion-col class="command_col">{{command.doneness}}</ion-col>
         <ion-col class="command_col">{{command.meal}}</ion-col>

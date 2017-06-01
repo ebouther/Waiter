@@ -1,18 +1,44 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>Home</ion-title>
+    <ion-title>Menu</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  <h2>Today's Menu</h2>
-    <ion-list>
-      <ion-list-header>Entree</ion-list-header>
-    </ion-list>
-    <ion-list>
-      <ion-list-header>Meal</ion-list-header>
-    </ion-list>
-    <ion-list>
-      <ion-list-header>Dessert</ion-list-header>
-    </ion-list>
+    <ion-item-group>
+      <ion-item-divider>
+        Viande/Poisson
+        <button (click)="addMeat()" ion-button item-end><ion-icon name="add"></ion-icon></button>
+      </ion-item-divider>
+      <ion-item-sliding *ngFor="let meat of menu.meats">
+          <ion-item>
+              {{meat.name}}
+          </ion-item>
+          <ion-item-options>
+              <button ion-button icon-only (click)="editMeat(meat)" light>
+                  <ion-icon name="paper"></ion-icon>
+              </button>
+              <button ion-button icon-only (click)="deleteMeat(meat)" danger>
+                  <ion-icon name="trash"></ion-icon>
+              </button>
+          </ion-item-options>
+      </ion-item-sliding>
+      <ion-item-divider>
+        Plat
+        <button (click)="addMeal()" ion-button item-end><ion-icon name="add"></ion-icon></button>
+      </ion-item-divider>
+      <ion-item-sliding *ngFor="let meal of menu.meals">
+          <ion-item>
+              {{meal.name}}
+          </ion-item>
+          <ion-item-options>
+              <button ion-button icon-only (click)="editMeal(meal)" light>
+                  <ion-icon name="paper"></ion-icon>
+              </button>
+              <button ion-button icon-only (click)="deleteMeal(meal)" danger>
+                  <ion-icon name="trash"></ion-icon>
+              </button>
+          </ion-item-options>
+      </ion-item-sliding>
+    </ion-item-group>
 </ion-content>

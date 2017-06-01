@@ -9,7 +9,7 @@ import {MenuService} from '../../app/services/menu.service';
 })
 export class NewMealPage {
 
-  inputs = {};
+  inputs = {nb: 1};
 
   constructor(public navCtrl: NavController,
               private menu: MenuService) {
